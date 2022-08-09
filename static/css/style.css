@@ -1,15 +1,34 @@
+::-webkit-scrollbar {
+  width: 10px;
+  border-radius: 50%;
+}
+
+::-webkit-scrollbar-track {
+  background: #404040;
+  border-radius: 50px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #222222;
+  border-radius: 8px;
+  border: none;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #2c2c2c;
+}
 
 body {
   font-family: "Open Sans", sans-serif;
   background-color: #040404;
-  color: #fff;
+  color: white;
   position: relative;
-  background: transparent;
+  background: #0a0c0a;
 }
 body::before {
   content: "";
   position: fixed;
-  background: #040404 url("../img/bg.jpg") top right no-repeat;
+  background: #040404 url("/static/img/bg.jpg") top right no-repeat;
   background-size: cover;
   left: 0;
   right: 0;
@@ -33,13 +52,17 @@ a:hover {
   text-decoration: none;
 }
 
+a .card_desc {
+  color: white;
+}
+
 h1, h2, h3, h4, h5, h6 {
   font-family: "Raleway", sans-serif;
 }
 
-/*--------------------------------------------------------------
+/*--------
 # Header
---------------------------------------------------------------*/
+--------*/
 #header {
   transition: ease-in-out 0.3s;
   position: relative;
@@ -84,7 +107,7 @@ h1, h2, h3, h4, h5, h6 {
   display: flex;
 }
 #header .social-links a {
-  font-size: 16px;
+  font-size: 20px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -93,8 +116,8 @@ h1, h2, h3, h4, h5, h6 {
   line-height: 1;
   margin-right: 8px;
   border-radius: 50%;
-  width: 40px;
-  height: 40px;
+  width: 45px;
+  height: 45px;
 }
 #header .social-links a:hover {
   background: #1e90ff;
@@ -149,9 +172,9 @@ h1, h2, h3, h4, h5, h6 {
   }
 }
 
-/*--------------------------------------------------------------
+/*----------------
 # Navigation Menu
---------------------------------------------------------------*/
+----------------*/
 /**
 * Desktop Navigation 
 */
@@ -273,9 +296,9 @@ h1, h2, h3, h4, h5, h6 {
   position: relative;
 }
 
-/*--------------------------------------------------------------
+/*-----------------
 # Sections General
---------------------------------------------------------------*/
+-----------------*/
 section {
   overflow: hidden;
   position: absolute;
@@ -334,9 +357,9 @@ section .container {
   color: #fff;
 }
 
-/*--------------------------------------------------------------
+/*-------
 # About
---------------------------------------------------------------*/
+-------*/
 .about-me .content h3 {
   font-weight: 700;
   font-size: 26px;
@@ -364,9 +387,9 @@ section .container {
   margin-bottom: 0;
 }
 
-/*--------------------------------------------------------------
+/*--------
 # Counts
---------------------------------------------------------------*/
+--------*/
 .counts {
   padding: 70px 0 60px;
 }
@@ -402,9 +425,9 @@ section .container {
   font-size: 14px;
 }
 
-/*--------------------------------------------------------------
+/*--------
 # Skills
---------------------------------------------------------------*/
+--------*/
 .skills .progress {
   height: 60px;
   display: block;
@@ -434,9 +457,9 @@ section .container {
   background-color: #1e90ff;
 }
 
-/*--------------------------------------------------------------
+/*-----------
 # Interests
---------------------------------------------------------------*/
+-----------*/
 .interests .icon-box {
   display: flex;
   align-items: center;
@@ -732,6 +755,11 @@ section .container {
   padding: 0;
   margin: 0;
 }
+
+.icon-box .card_title {
+  color: #fff;
+}
+
 .portfolio .portfolio-wrap .portfolio-links {
   text-align: center;
   z-index: 4;
@@ -835,6 +863,21 @@ section .container {
   width: 100%;
   background: rgba(255, 255, 255, 0.08);
 }
+
+.contact .info-box {
+  color: #444444;
+  padding: 20px;
+  width: 100%;
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.contact .info-box .div {
+  color: #444444;
+  padding: 7px;
+  width: 100%;
+  /* background: rgba(255, 255, 255, 0.08); */
+}
+
 .contact .info-box i.bx {
   font-size: 24px;
   color: #1e90ff;
@@ -843,7 +886,8 @@ section .container {
   float: left;
   background: rgba(255, 255, 255, 0.1);
 }
-.contact .info-box h3 {
+.contact .info-box h3,
+.contact .feedback {
   font-size: 20px;
   color: rgba(255, 255, 255, 0.5);
   font-weight: 700;

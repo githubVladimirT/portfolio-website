@@ -1,7 +1,9 @@
 import json
 import sys
 
-from flask import Flask, render_template
+import requests
+import telebot
+from flask import Flask, render_template, request
 from flask_flatpages import FlatPages, pygments_style_defs
 from flask_frozen import Freezer
 
@@ -11,6 +13,7 @@ FLATPAGES_EXTENSION = '.md'
 FLATPAGES_ROOT = 'content'
 POST_DIR = 'posts'
 PORT_DIR = 'portfolio'
+bot = telebot.TeleBot('5407984625:AAH_UbWb2evYUM1qsdVOlrplOJO9loWS76A')
 
 app = Flask(__name__)
 flatpages = FlatPages(app)
@@ -18,7 +21,7 @@ freezer = Freezer(app)
 app.config.from_object(__name__)
 
 
-@app.route("/")
+@app.route("/", methods=['post', 'get'])
 def index():
     posts = [p for p in flatpages if p.path.startswith(POST_DIR)]
     posts.sort(key=lambda item: item['date'], reverse=True)
@@ -26,9 +29,17 @@ def index():
     cards = [p for p in flatpages if p.path.startswith(PORT_DIR)]
     cards.sort(key=lambda item: item['title'])
 
-    with open('settings.json', encoding='utf8') as config:
+    with open('settings.json', encoding='utf-8') as config:
         data = config.read()
         settings = json.loads(data)
+
+    with open("about_text.txt", encoding='utf-8') as txt:
+        readed_text = txt.readlines()
+        about = ""
+
+        for line in readed_text:
+            about += line + "\n"
+
 
     tags = set()
 
@@ -38,7 +49,25 @@ def index():
         if t:
             tags.add(t.lower())
 
-    return render_template('index.html', posts=posts, cards=cards, bigheader=True, **settings, tags=tags)
+    flag = 0
+    global form_data
+    form_data = {
+        "name": request.form.get("name"),
+        "email": request.form.get("email"),
+        "subject": request.form.get("subject"),
+        "message": request.form.get("message")
+    }
+
+    text = f"Имя: {form_data['name']}\n\nПочта: {form_data['email']}\n\nТема: {form_data['subject']}\n\nСообщение: {form_data['message']}"
+
+    for _, val in form_data.items():
+        if val is not None:
+            flag += 1
+
+    if flag == 4:
+        requests.get(f"https://api.telegram.org/bot5407984625:AAH_UbWb2evYUM1qsdVOlrplOJO9loWS76A/sendMessage?chat_id=1951745674&text={text}")
+
+    return render_template('index.html', posts=posts, cards=cards, bigheader=True, **settings, tags=tags, about=about)
 
 
 @app.route('/posts/<name>/')
@@ -72,3 +101,4 @@ if __name__ == "__main__":
         freezer.freeze()
     else:
         app.run(host='0.0.0.0', port=80, debug=DEBUG)
+

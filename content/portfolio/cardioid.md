@@ -1,7 +1,7 @@
 title: Кардиоида
-description: Генерация кардиоиды
+description: Анимированная генерация кардиоиды
 category: graphics
 icon: bx bx-pencil
-info: Клонировать репозиторий можно здесь
+info: Скачать исходный код можно здесь
 link: https://github.com/githubVladimirT/Cardioid
 

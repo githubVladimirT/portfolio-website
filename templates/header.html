@@ -1,5 +1,4 @@
 {% block header %}
-  <!-- Хедер -->
   <header id="header">
     <div class="container">
       <h1><a href="{{ site_url }}">{{ name }}</a></h1>
@@ -10,17 +9,15 @@
           <li><a class="nav-link active" href="#header">{{ sect1 }}</a></li>
           <li><a class="nav-link" href="#resume">{{ sect2 }}</a></li>
           <li><a class="nav-link" href="#portfolio">{{ sect3 }}</a></li>
-          <li><a class="nav-link" href="#blog">{{ sect4 }}</a></li>
+          <!-- <li><a class="nav-link" href="#blog">{{ sect4 }}</a></li> -->
           <li><a class="nav-link" href="#contact">{{ sect5 }}</a></li>
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
       </nav><!-- Навигация -->
 
-      <div class="social-links">
-        <a href="{{ github }}" class="github"><i class="fa fa-github"></i></a>
-        <!-- <a href="{{ telegram }}" class="telegram"><i class="fa fa-telegram"></i></a> -->
-        <!-- <a href="{{ email }}" class="email"><i class="fa fa-envelope"></i></a> -->
+      <div class="social-links" >
+        <a href="{{ github }}" class="github" style="font-size: 25px;"><i class="fa fa-github"></i></a>
       </div>
-      </div>
-  </header><!-- Конец хедера -->    
+    </div>
+  </header>
 {% endblock %}

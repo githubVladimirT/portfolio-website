@@ -1,17 +1,15 @@
 {
-    "site_url": "http://localhost",
-    "site_title": "Vladimir Tolstov: Python разработчик и автор контента",
-    "description": "Владимир Толстов - портфолио, резюме и блог",
+    "site_url": "http://127.0.0.1",
+    "site_title": "Vladimir Tolstov",
+    "description": "Vladimir Tolstov - портфолио",
     "keywords": "Разработка",
     "name": "Владимир Толстов",
-    "tag1": "Разработчик ПО",
+    "tag1": "\n",
     "sect1": "Главная",
-    "sect2": "Резюме",
+    "sect2": "Обо мне",
     "sect3": "Портфолио",
     "sect4": "Блог",
     "sect5": "Контакты",
-    "telegram": "https://t.me/",
-    "email": "mailto:example@gmail.com",
     "github": "https://github.com/githubVladimirT",
     "city": "Санкт-Петербург"
 }

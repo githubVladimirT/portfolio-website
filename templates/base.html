@@ -20,10 +20,9 @@
 </head>
 <body>
   <main id="main">
-{% block content %} <!-- вложенные шаблоны -->
+{% block content %}
 {% endblock %}
   </main>
-  <!-- Скрипты -->
   <script src="{{ url_for('static', filename='assets/purecounter/purecounter.js') }}"></script>
   <script src="{{ url_for('static', filename='assets/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
   <script src="{{ url_for('static', filename='assets/glightbox/js/glightbox.min.js') }}"></script>
