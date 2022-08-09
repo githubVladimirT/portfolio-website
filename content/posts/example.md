@@ -1,7 +1,7 @@
-﻿title: 
-date: 
-description: 
-tag: 
-project: 
-platform: 
-link: 
+﻿title: title
+date: date
+description: description
+tag: tag
+project: project
+platform: platform
+link: link
