@@ -1,8 +1,6 @@
 import json
 import sys
 
-import requests
-import telebot
 from flask import Flask, render_template, request
 from flask_flatpages import FlatPages, pygments_style_defs
 from flask_frozen import Freezer
@@ -13,7 +11,6 @@ FLATPAGES_EXTENSION = '.md'
 FLATPAGES_ROOT = 'content'
 POST_DIR = 'posts'
 PORT_DIR = 'portfolio'
-bot = telebot.TeleBot('5407984625:AAH_UbWb2evYUM1qsdVOlrplOJO9loWS76A')
 
 app = Flask(__name__)
 flatpages = FlatPages(app)
@@ -48,24 +45,6 @@ def index():
 
         if t:
             tags.add(t.lower())
-
-    flag = 0
-    global form_data
-    form_data = {
-        "name": request.form.get("name"),
-        "email": request.form.get("email"),
-        "subject": request.form.get("subject"),
-        "message": request.form.get("message")
-    }
-
-    text = f"Имя: {form_data['name']}\n\nПочта: {form_data['email']}\n\nТема: {form_data['subject']}\n\nСообщение: {form_data['message']}"
-
-    for _, val in form_data.items():
-        if val is not None:
-            flag += 1
-
-    if flag == 4:
-        requests.get(f"https://api.telegram.org/bot5407984625:AAH_UbWb2evYUM1qsdVOlrplOJO9loWS76A/sendMessage?chat_id=1951745674&text={text}")
 
     return render_template('index.html', posts=posts, cards=cards, bigheader=True, **settings, tags=tags, about=about)
 
