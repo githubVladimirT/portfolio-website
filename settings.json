@@ -1,5 +1,5 @@
 {
-    "site_url": "http://127.0.0.1",
+    "site_url": "https://githubvladimirt.github.io",
     "site_title": "Vladimir Tolstov",
     "description": "Vladimir Tolstov - портфолио",
     "keywords": "Разработка",
@@ -11,5 +11,6 @@
     "sect4": "Блог",
     "sect5": "Контакты",
     "github": "https://github.com/githubVladimirT",
+    "google": "https://g.dev/githubVladimirT",
     "city": "Санкт-Петербург"
 }

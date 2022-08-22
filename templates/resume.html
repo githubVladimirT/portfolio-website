@@ -9,15 +9,18 @@
 
       <div class="row">
         <div class="col-lg-4" data-aos="fade-right">
-          <img src="static/img/me.jpg" class="img-fluid" alt="" style="width: 250px; border-radius: 50%;">
-          <div class="social-links" style="margin-left: 230px; margin-top: -30px; font-size: 25px;">
-            <a href="{{ github }}" class="github"><i class="fa fa-github"></i></a>
+          <img src="static/img/me.jpg" class="img-fluid" alt="" style="width: 250px; border-radius: 50%; filter: blur(1px);">
+          <div class="social-links" style="margin-left: 230px; margin-top: -30px; font-size: 20px;">
+            <a href="{{ github }}" class="github" target="_blank"><i class="fa fa-github"></i></a>
           </div>
         </div>
         <div class="col-lg-8 pt-4 pt-lg-0 content" data-aos="fade-left">
           <h3>{{ tag1 }} </h3>
           <p class="fst-italic">
-            {{ about }}
+            {{ about[0] }}
+          </p>
+          <p class="fst-italic">
+            {{ about[1] }}
           </p>
           <!-- <div class="row">
             <div class="col-lg-6">

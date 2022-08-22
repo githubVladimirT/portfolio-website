@@ -32,10 +32,10 @@ def index():
 
     with open("about_text.txt", encoding='utf-8') as txt:
         readed_text = txt.readlines()
-        about = ""
+        about = []
 
         for line in readed_text:
-            about += line + "\n"
+            about.append(line)
 
 
     tags = set()
